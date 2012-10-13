@@ -34,7 +34,7 @@ class Router {
 				if(is_null($dest)) return $this->default;
 				$dest = ROOT.$dest;
 				if(is_string($dest) && file_exists($dest)) return $dest;
-				else throw new Exception('Could not route request: '.$dest);
+				else throw new Exception('Could not route request: '.basename($dest));
 		}
 
 		protected function doRoute($key,$arr=null){
