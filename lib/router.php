@@ -8,17 +8,27 @@ class Router {
 
 	private $default = null;
 	private $apps = array();
+	private $root = NULL;
 
 	public static function init(){
 		if(is_null(self::$inst)) self::$inst = new Router();
 	}
+
 
 	public static function _get(){
 		if(!is_object(self::$inst)) throw new Exception('Router object not initialized');
 		return self::$inst;
 	}
 
-	public function setDefault($dest){$this->default = ROOT.$dest; return ROOT.$dest;}
+	public function setDefault($dest){
+		$this->default = $this->root.$dest;
+		return $this->root.$dest;
+	}
+	
+	public function setRoot($root){
+		$this->root = $root;
+		return $root;
+	}
 
 	public function register($act,$do=array()){
 		$this->apps[$act] = $do;
@@ -32,7 +42,7 @@ class Router {
 			if($i > 2 && is_array($dest)) throw new Exception('Routing cannot pass 3 levels');
 		} while(is_array($dest));
 		if(is_null($dest)) return $this->default;
-		$dest = ROOT.$dest;
+		$dest = $this->root.$dest;
 		if(is_string($dest) && file_exists($dest)) return $dest;
 		else throw new Exception('Could not route request: '.basename($dest));
 	}
