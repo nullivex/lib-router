@@ -31,7 +31,11 @@ class Router {
 	}
 
 	public function register($act,$do=array()){
-		$this->apps[$act] = $do;
+		if(isset($this->apps[$act]))
+			$this->apps[$act] = array_merge($this->apps[$act],$do);
+		else
+			$this->apps[$act] = $do;
+		return $this;
 	}
 
 	public function route($act=null,$do=null,$fire=null){
