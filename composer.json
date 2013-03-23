@@ -1,0 +1,28 @@
+{
+	 "name":				"openlss/lib-router"
+	,"homepage":			"http://openlss.org"
+	,"description":			"Router for handling web calls, allows dynamic registration at runtime"
+	,"license":				"LGPL-3.0+"
+	,"type":				"library"
+	,"keywords": [
+		 "router"
+		,"call handling"
+		,"dynamic routing"
+		,"route defaults"
+	]
+	,"authors": [
+		 {
+			 "name":		"Bryan Tong"
+			,"email":		"contact@nullivex.com"
+			,"homepage":	"http://bryantong.com"
+		}
+		,{
+			 "name":		"Tony Butler"
+			,"email":		"spudz76@gmail.com"
+			,"homepage":	"http://openlss.org"
+		}
+	]
+	,"require": {
+		 "php":					">=5.3.2"
+	}
+}
