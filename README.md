@@ -6,7 +6,7 @@ Router for handling web calls, allows dynamic registration at runtime
 Usage
 ----
 ```php
-ld('router');
+use \LSS\Router;
 
 Router::init();
 Router::_get()->setRoot(ROOT);
