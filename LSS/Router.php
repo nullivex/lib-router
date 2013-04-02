@@ -20,6 +20,8 @@
  */
 namespace LSS;
 
+use \Exception;
+
 class Router {
 
 	static $inst = null;
