@@ -46,7 +46,7 @@ class Router {
 		$this->default = $this->root.$dest;
 		return $this->root.$dest;
 	}
-	
+
 	public function setRoot($root){
 		$this->root = $root;
 		return $root;
